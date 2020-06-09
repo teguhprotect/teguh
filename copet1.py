@@ -22,7 +22,7 @@ requests.packages.urllib3.disable_warnings()
 # ᴘʀɪᴍᴇʀʏ ᴅᴀɴ ɢᴍᴀɪʟ
 #=====================================
 # ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ
-cl = LINE("zarkoni929@gmail.com"'"polytron11")
+cl = LINE("zarkoni929@gmail.com","polytron11")
 cl.log("Auth Token : " + str(cl.authToken))
 cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
 print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
