@@ -3382,7 +3382,7 @@ def bot(op):
       "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://images.app.goo.gl/aEpZVa5bLzRKSfLbA",
+        "url": "linepy-1591671491-5.jpg",
         "size": "full",
         "aspectMode": "cover",
         "aspectRatio": "320:213"
@@ -3451,7 +3451,7 @@ def bot(op):
       "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://images.app.goo.gl/aEpZVa5bLzRKSfLbA",
+        "url": "https://obs.line-scdn.net/{}".format(cl.getContact(sender).pictureStatus)",
         "size": "full",
         "aspectMode": "cover",
         "aspectRatio": "320:213"
