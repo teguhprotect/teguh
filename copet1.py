@@ -22,25 +22,11 @@ requests.packages.urllib3.disable_warnings()
 # ᴘʀɪᴍᴇʀʏ ᴅᴀɴ ɢᴍᴀɪʟ
 #=====================================
 # ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass 
-#==============[●●●●●●]==============#
-print ("=========== LOGIN SUCSES ==========")
-
+cl = LINE("zarkoni929@gmail.com"'"polytron11")
+cl.log("Auth Token : " + str(cl.authToken))
+cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
+print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
+#======================================================
 oepoll = OEPoll(cl)
 call = cl
 creator = ["u6efc0dbb595b3430a340afaf1500bf8b","ue7b2c0c3f5d7d250e7c6defd09606600"]
@@ -384,7 +370,7 @@ def sendTextTemplate(to, text):
         ],
         "margin": "xs",
         "spacing": "md",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#00FFFF"
       },
       {
         "type": "box",
@@ -398,13 +384,13 @@ def sendTextTemplate(to, text):
           }
         ],
         "paddingAll": "2px",
-        "backgroundColor": "#000000",
+        "backgroundColor": "#F8F8FF",
         "margin": "xs"
       }
     ],
     "paddingAll": "0px",
     "borderWidth": "2px",
-    "borderColor": "#FF0000",
+    "borderColor": "#F8F8FF",
     "cornerRadius": "10px",
     "spacing": "xs"
   },
@@ -842,7 +828,7 @@ def bot(op):
                     "type": "text",
                     "text": "  {}".format(cl.getContact(op.param2).displayName),
                     "size": "xs",
-                    "color": "#ffffff",
+                    "color": "#00FFFF",
                     "weight": "bold"
                   }
                 ]
@@ -854,7 +840,7 @@ def bot(op):
                   {
                     "type": "text",
                     "text": "☯️ innalillahi",
-                    "color": "#ebebeb",
+                    "color": "#F8F8FF",
                     "size": "xxs",
                     "flex": 0
                   }
@@ -878,7 +864,7 @@ def bot(op):
                       {
                         "type": "text",
                         "text": "⁣𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
-                        "color": "#ffffff",
+                        "color": "#00FFFF",
                         "flex": 0,
                         "offsetTop": "0px"
                       },
@@ -915,7 +901,7 @@ def bot(op):
               {
                 "type": "text",
                 "text": "ʟᴇғᴛ",
-                "color": "#ffffff",
+                "color": "#F8F8FF",
                 "align": "center",
                 "size": "xs",
                 "offsetTop": "-3px"
@@ -971,7 +957,7 @@ def bot(op):
                     "type": "text",
                     "text": "  {}".format(cl.getContact(op.param2).displayName),
                     "size": "xs",
-                    "color": "#ffffff",
+                    "color": "#00FFFF",
                     "weight": "bold"
                   }
                 ]
@@ -983,7 +969,7 @@ def bot(op):
                   {
                     "type": "text",
                     "text": "☯️ Sugeng Rawuh ",
-                    "color": "#ebebeb",
+                    "color": "#F8F8FF",
                     "size": "xxs",
                     "flex": 0
                   }
@@ -1007,7 +993,7 @@ def bot(op):
                       {
                         "type": "text",
                         "text": "⁣𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
-                        "color": "#ffffff",
+                        "color": "#00FFFF",
                         "flex": 0,
                         "offsetTop": "0px"
                       },
@@ -1044,7 +1030,7 @@ def bot(op):
               {
                 "type": "text",
                 "text": "ᴡʟᴄᴍ",
-                "color": "#ffffff",
+                "color": "#00FFFF",
                 "align": "center",
                 "size": "xs",
                 "offsetTop": "-3px"
@@ -1053,7 +1039,7 @@ def bot(op):
             "position": "absolute",
             "cornerRadius": "8px",
             "offsetTop": "3px",
-            "backgroundColor": "#ff334b",
+            "backgroundColor": "#F8F8FF",
             "offsetStart": "5px",
             "height": "15px",
             "width": "38px"
@@ -2109,7 +2095,7 @@ def bot(op):
                     "type": "text",
                     "text": "  {}".format(cl.getContact(op.param2).displayName),
                     "size": "xxs",
-                    "color": "#ffffff",
+                    "color": "#00FFFF",
                     "weight": "bold"
                   }
                 ]
@@ -2121,7 +2107,7 @@ def bot(op):
                   {
                     "type": "text",
                     "text": "☯️ Ngintip colok...  ",
-                    "color": "#ebebeb",
+                    "color": "#F8F8FF",
                     "size": "xxs",
                     "flex": 0
                   }
@@ -2145,7 +2131,7 @@ def bot(op):
                       {
                         "type": "text",
                         "text": "⁣𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
-                        "color": "#ffffff",
+                        "color": "#F8F8FF",
                         "flex": 0,
                         "offsetTop": "0px"
                       },
@@ -3008,11 +2994,11 @@ def bot(op):
 
                         elif cmd == "owner" or text.lower() == 'creator':
                             if msg._from in admin:
-                                cl.sendMessage(msg.to, "uafe5c4198aa3bbceba5502798d8a2c16") 
+                                cl.sendMessage(msg.to, "ue7b2c0c3f5d7d250e7c6defd09606600") 
                                 ma = ""
                                 for i in creator:
                                     ma = cl.getContact(i)
-                                    cl.sendMessage(msg.to, None, contentMetadata={'uafe5c4198aa3bbceba5502798d8a2c16': i}, contentType=13)
+                                    cl.sendMessage(msg.to, None, contentMetadata={'ue7b2c0c3f5d7d250e7c6defd09606600': i}, contentType=13)
                                     cl.sendMessage(msg.to, None, contentMetadata={"STKID":"16083749","STKPKGID":"1419343","STKVER":"1"}, contentType=7)
 
                         elif cmd == "asem" or text.lower() == 'asemmm' or text.lower() == 'sem' or text.lower() == 'semm':
@@ -3396,7 +3382,7 @@ def bot(op):
       "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://h.top4top.io/p_1556ubozy0.jpg",
+        "url": "https://images.app.goo.gl/aEpZVa5bLzRKSfLbA",
         "size": "full",
         "aspectMode": "cover",
         "aspectRatio": "320:213"
@@ -3465,7 +3451,7 @@ def bot(op):
       "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://c.top4top.io/p_1519aayh71.jpg",
+        "url": "https://images.app.goo.gl/aEpZVa5bLzRKSfLbA",
         "size": "full",
         "aspectMode": "cover",
         "aspectRatio": "320:213"
