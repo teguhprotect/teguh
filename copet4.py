@@ -72,10 +72,10 @@ aisMID = ais.getProfile().mid
 #=====================================================================
 #=====================================================================
 loop = asyncio.get_event_loop()
-admin =["u73a240047c27fee83b8a482d7c30e31c"]
-admin = ["u73a240047c27fee83b8a482d7c30e31c"]
-owner = ["u73a240047c27fee83b8a482d7c30e31c"]
-staff = ["u73a240047c27fee83b8a482d7c30e31c"]
+admin =["ue7b2c0c3f5d7d250e7c6defd09606600"]
+admin = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
+owner = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
+staff = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
 botStart = time.time()
 msg_image={}
 msg_video={}
