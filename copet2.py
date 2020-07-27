@@ -15,20 +15,25 @@ msg_dict = {}
 msg_dict1 = {}
 #==============[ token 1 ]==============#
 try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    AbiOlengKiller = "api keyMu"
+    headers = {
+        "apiKey":AbiOlengKiller,
+        "appName": "CHROMEOS\t2.3.8\tChrome OS\t1",
+        "cert" : None,
+        "server": random.choice(["pool-1","pool-2"]),
+        "sysname": "AbiOleng"
+        }
+    main = json.loads(requests.get("https://api.be-team.me/qrv2",headers=headers).text)
+    print("QR Oleng: " + main["result"]["qr_link"])
+    if not headers["cert"]:
+        result = json.loads(requests.get(main["result"]["cb_pincode"],headers=headers).text)
+        print("Code Oleng: " + result["result"])
+    result = json.loads(requests.get(main["result"]["cb_token"],headers=headers).text)
     if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
+        print("[ Error ] "+ result["reason"])
+    else:
+        cl = LINE(result["result"]["token"],appName="CHROMEOS\t2.3.8\tChrome OS\t1")
+        print ("== ʟᴏɢɪɴ sᴜᴄᴄᴇs ʙᴏssᴋᴜ ᴀʙɪ ==")
 except:pass 
 #==============[●●●●●●]==============#
 print ("=========== LOGIN SUCSES ==========")
@@ -42,10 +47,10 @@ KAC = [cl]
 ABC = [cl]
 #GHOST = [sw]
 Bots = [mid]
-creator = ["uafe5c4198aa3bbceba5502798d8a2c16"]
-owner = ["uafe5c4198aa3bbceba5502798d8a2c16"]
-admin = ["uafe5c4198aa3bbceba5502798d8a2c16"]
-staff = ["uafe5c4198aa3bbceba5502798d8a2c16"]
+creator = ["u6efc0dbb595b3430a340afaf1500bf8b"]
+owner = ["u6efc0dbb595b3430a340afaf1500bf8b"]
+admin = ["u6efc0dbb595b3430a340afaf1500bf8b"]
+staff = ["u6efc0dbb595b3430a340afaf1500bf8b"]
 Drop_Xv = "uafe5c4198aa3bbceba5502798d8a2c16" #ID_DROPING_BOTS
 Xv_WIN = "uafe5c4198aa3bbceba5502798d8a2c16" #ID_WINDOWS_XP
 Xv_LAN = "uafe5c4198aa3bbceba5502798d8a2c160" #ID_SERVER_LAN
