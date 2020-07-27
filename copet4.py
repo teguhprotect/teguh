@@ -37,7 +37,7 @@ except ImportError:
     import urllib2
 #=====================================================================
 #=====================================================================
-cl = LINE(""bandisubroto983@gmail.com","polisi12")
+cl = LINE("bandisubroto983@gmail.com","polisi12")
 cl.log("Auth Token : " + str(cl.authToken))
 cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
 print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
