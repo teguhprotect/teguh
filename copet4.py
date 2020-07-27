@@ -37,7 +37,7 @@ except ImportError:
     import urllib2
 #=====================================================================
 #=====================================================================
-cl = LINE("zarkoni929@gmail.com","polytron11")
+cl = LINE(""bandisubroto983@gmail.com","polisi12")
 cl.log("Auth Token : " + str(cl.authToken))
 cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
 print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
@@ -60,10 +60,10 @@ aisMID = ais.getProfile().mid
 #=====================================================================
 #=====================================================================
 loop = asyncio.get_event_loop()
-admin =["ue7b2c0c3f5d7d250e7c6defd09606600"]
-admin = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
-owner = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
-staff = ["ue7b2c0c3f5d7d250e7c6defd09606600"]
+admin =["u6efc0dbb595b3430a340afaf1500bf8b"]
+admin = ["u6efc0dbb595b3430a340afaf1500bf8b"]
+owner = ["u6efc0dbb595b3430a340afaf1500bf8b"]
+staff = ["u6efc0dbb595b3430a340afaf1500bf8b"]
 botStart = time.time()
 msg_image={}
 msg_video={}
