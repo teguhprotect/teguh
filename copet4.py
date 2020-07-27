@@ -37,16 +37,16 @@ except ImportError:
     import urllib2
 #=====================================================================
 #=====================================================================
-cl = LINE("bandisubroto983@gmail.com","polisi12")
-cl.log("Auth Token : " + str(cl.authToken))
-cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
+ais = LINE("bandisubroto983@gmail.com","polisi12")
+ais.log("Auth Token : " + str(ais.authToken))
+ais.log("Timeline Token : " + str(ais.tl.channelAccessToken))
 print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
 #======================================================
 #Bots = [ais]
 #Team = owner + admin + staff 
 #ais = LINE("ud8546c432f683c3aceaf645594910d3f:aWF0OiAxNTg4NzU5NzI3MDk4Cg==..nQpkWRyZvJh+gb1YS9+kRgwHjhc=",appName="IOS\t10.1.1\tIOS\t13.3.1")
 waitOpen = codecs.open("wait.json","r","utf-8")
-settingsOpen = codecs.open("temp.json","r","utf-8")
+#settingsOpen = codecs.open("temp.json","r","utf-8")
 imagesOpen = codecs.open("image.json","r","utf-8")
 stickersOpen = codecs.open("sticker.json","r","utf-8")
 stickers2Open = codecs.open("sticker2.json","r","utf-8")
@@ -85,7 +85,7 @@ protectqr = []
 protectantijs = []
 aisStart = time.time()
 wait = json.load(waitOpen)
-settings = json.load(settingsOpen)
+#settings = json.load(settingsOpen)
 images = json.load(imagesOpen)
 stickers = json.load(stickersOpen)
 stickers2 = json.load(stickers2Open)
