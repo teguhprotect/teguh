@@ -32,7 +32,6 @@ cl.log("Auth Token : " + str(cl.authToken))
 cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
 print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
 #======================================================
-except:pass
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
 mid = cl.getProfile().mid
