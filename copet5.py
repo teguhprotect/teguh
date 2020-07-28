@@ -211,6 +211,33 @@ def mentionMembers(to, mid):
         AbiOlengKiller.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
         AbiOlengKiller.sendMessage(to, "[ ɪɴғᴏ ] ᴇʀᴏʀ :\n" + str(error))
+        
+def RemotOlengKiller(to, BotsOleng):
+    try:
+        AbiOleng = ""
+        MuhazirOlengKiller = "Total {} Janda \n1.".format(str(len(BotsOleng)))
+        Desah = []
+        TapokPipit = 1
+        JilatMpek = 2
+        for Sedot in BotsOleng:
+            MuhazirOleng = "@x\n"
+            Wikwik = str(len(MuhazirOlengKiller))
+            Ngentot = str(len(MuhazirOlengKiller) + len(MuhazirOleng) - 1)
+            AbiOleng = {'S':Wikwik, 'E':Ngentot, 'M':Sedot}
+            Desah.append(AbiOleng)
+            MuhazirOlengKiller += MuhazirOleng
+            if TapokPipit < len(BotsOleng):
+                TapokPipit += 1
+                MuhazirOlengKiller += "%i. " % (JilatMpek)
+                JilatMpek=(JilatMpek+1)
+            else:
+                try:
+                    TapokPipit = "\n[ {} ]".format(str(AbiOlengKiller.getGroup(to).name))
+                except:
+                    TapokPipit = "\n[ Success ]"
+        AbiOlengKiller.sendMessage(to, MuhazirOlengKiller, {'MENTION': str('{"MENTIONEES":' + json.dumps(Desah) + '}')}, 0)
+    except Exception as error:
+        logError(error)
 
 def siderMembers(to, mid):
     try:
@@ -2671,6 +2698,23 @@ def bot(op):
                                   AbiOlengKiller.sendMessage(msg.to, AbiOlengKillers)
                                   AbiOlengKiller.sendAudioWithURL(msg.to, AbiSangeCok["result"]["download_link"])
                                   AbiOlengKiller.sendVideoWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                    
+                        elif cmd.startswith("aby: "):
+                            	Croot = msg.text.split(":")
+                            	Pepek = msg.text.replace(Croot[0] + ":"," ")
+                            	Peler = AbiOlengKiller.getGroupIdsJoined()
+                            	Pokeh = Peler[int(Pepek)-1]                                                            
+                            	CokAnCok = AbiOlengKiller.getGroup(Pokeh)                                                            
+                            	OlengKiller = [contact.mid for contact in CokAnCok.members]
+                            	Celik = len(OlengKiller)//19
+                    	        for Manik in range(Celik+1):
+                            		txt = u''
+                    		        s=0
+                            		Bohay=[]
+                            		for Jilat in CokAnCok.members[Manik*19 : (Manik+1)*19]:
+                            			Bohay.append(Jilat.mid)
+                            		RemotOlengKiller(Pokeh, Bohay)                            
+                    		        AbiOlengKiller.sendMessage(msg.to, "Abi, Tag Janda Done\ndi Group: \n " + str(CokAnCok.name))            
                         
                         elif cmd == ".me" or text.lower() == 'gue':
                           if wait["selfbot"] == True:
