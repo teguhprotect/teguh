@@ -27,30 +27,15 @@ import requests,uvloop
 import wikipedia as wiki
 requests.packages.urllib3.disable_warnings()
 loop = uvloop.new_event_loop()
-try:
-    AbiOlengKiller = "api keyMu"
-    headers = {
-        "apiKey":AbiOlengKiller,
-        "appName": "CHROMEOS\t2.3.8\tChrome OS\t1",
-        "cert" : None,
-        "server": random.choice(["pool-1","pool-2"]),
-        "sysname": "AbiOleng"
-        }
-    main = json.loads(requests.get("https://api.be-team.me/qrv2",headers=headers).text)
-    print("QR Oleng: " + main["result"]["qr_link"])
-    if not headers["cert"]:
-        result = json.loads(requests.get(main["result"]["cb_pincode"],headers=headers).text)
-        print("Code Oleng: " + result["result"])
-    result = json.loads(requests.get(main["result"]["cb_token"],headers=headers).text)
-    if result["status"] != 200:
-        print("[ Error ] "+ result["reason"])
-    else:
-        AbiOlengKiller = LINE(result["result"]["token"],appName="CHROMEOS\t2.3.8\tChrome OS\t1")
-        print ("== ʟᴏɢɪɴ sᴜᴄᴄᴇs ʙᴏssᴋᴜ ᴀʙɪ ==")
+cl = LINE("teguhsuncoko456@gmail.com","polisi12")
+cl.log("Auth Token : " + str(cl.authToken))
+cl.log("Timeline Token : " + str(cl.tl.channelAccessToken))
+print ("╔══════════════════\n╠ ʟᴏɢɪɴ sᴜᴄᴄᴇs\n╚══════════════════")
+#======================================================
 except:pass
-oepoll = OEPoll(AbiOlengKiller)
-mid = AbiOlengKiller.profile.mid
-mid = AbiOlengKiller.getProfile().mid
+oepoll = OEPoll(cl)
+mid = cl.profile.mid
+mid = cl.getProfile().mid
 OlengKiller1 = [AbiOlengKiller]
 OlengKiller2 = [AbiOlengKiller]
 OlengKillerBots = [mid]
