@@ -3640,15 +3640,15 @@ def bot(op):
                                         "apiKey":MuhazirAlwiOleng,
                                         }
                                     AbiSangeCok = json.loads(requests.get("https://api.be-team.me/smule?url="+KoplakAbi,headers=headers).text)
-                                    AbiOlengKillers="╭──「 OLENG KILLER 」─────"
+                                    AbiOlengKillers="╭──「 𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶 」─────"
                                     AbiOlengKillers+="\n├ Band : " +AbiSangeCok["result"]["artist"]
                                     AbiOlengKillers+="\n├ Judul : " +AbiSangeCok["result"]["title"]
                                     AbiOlengKillers+="\n├ ID Smule : " +AbiSangeCok["result"]["owner"]["handle"]
                                     AbiOlengKillers+="\n├ Status :  " +AbiSangeCok["result"]["message"]
                                     AbiOlengKillers+="\n╰──「 Wait Video Nya 」─────"
-                                    AbiOlengKiller.sendMessage(msg.to, AbiOlengKillers)
-                                    AbiOlengKiller.sendAudioWithURL(msg.to, AbiSangeCok["result"]["download_link"])
-                                    AbiOlengKiller.sendVideoWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                    cl.sendMessage(msg.to, AbiOlengKillers)
+                                    cl.sendAudioWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                    cl.sendVideoWithURL(msg.to, AbiSangeCok["result"]["download_link"])
                                     
                         elif cmd.startswith("aby: "):
                              Croot = msg.text.split(":")
