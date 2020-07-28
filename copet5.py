@@ -35,9 +35,9 @@ print ("╔══════════════════\n╠ ʟᴏɢɪ
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
 mid = cl.getProfile().mid
-OlengKiller1 = [AbiOlengKiller]
-OlengKiller2 = [AbiOlengKiller]
-OlengKillerBots = [mid]
+#OlengKiller1 = [AbiOlengKiller]
+#OlengKiller2 = [AbiOlengKiller]
+Bots = [mid]
 BackupAbi = ["u3f9c3061f8e7a7c4e07d5f6be08b9339"]
 BackupOlengKiller = ["u3f9c3061f8e7a7c4e07d5f6be08b9339"]
 admin = ["u7bc7c4ef5e1c254e06c24f7070a86a3a"]
@@ -48,7 +48,7 @@ protectjoin = []
 protectinvite = []
 protectcancel = []
 welcome = []
-responsename1 = AbiOlengKiller.getProfile().displayName
+responsename1 = cl.getProfile().displayName
 settings = {
     "Picture":False,
     "group":{},
