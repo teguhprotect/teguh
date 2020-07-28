@@ -118,6 +118,7 @@ wait = {
     "Talkwblacklist":False,
     "Talkdblacklist":False,
     "talkban":True,
+    "smule":True,
     "contact":False,
     'autoJoin':True,
     'autoAdd':True,
@@ -2645,7 +2646,32 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                   musik(to)
-                                  
+                        
+                        elif "https://www.smule.com" in msg.text.lower():
+                          if wait["smule"] == True:
+                              PokehBeceng = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+                              KacongAbi = re.findall(PokehBeceng, text)
+                              AbiGenteng = []
+                              for Cok in KacongAbi:
+                                  if Cok not in AbiGenteng:
+                                      AbiGenteng.append(Cok)
+                              for PalakBenPokeh in AbiGenteng:
+                                  KoplakAbi = PalakBenPokeh
+                                  MuhazirAlwiOleng = "OLENGKILLER"
+                                  headers = {
+                                      "apiKey":MuhazirAlwiOleng,
+                                      }
+                                  AbiSangeCok = json.loads(requests.get("https://api.be-team.me/smule?url="+KoplakAbi,headers=headers).text)
+                                  AbiOlengKillers="╭──「 OLENG KILLER 」─────"
+                                  AbiOlengKillers+="\n├ Band : " +AbiSangeCok["result"]["artist"]
+                                  AbiOlengKillers+="\n├ Judul : " +AbiSangeCok["result"]["title"]
+                                  AbiOlengKillers+="\n├ ID Smule : " +AbiSangeCok["result"]["owner"]["handle"]
+                                  AbiOlengKillers+="\n├ Status :  " +AbiSangeCok["result"]["message"]
+                                  AbiOlengKillers+="\n╰──「 Wait Video Nya 」─────"
+                                  AbiOlengKiller.sendMessage(msg.to, AbiOlengKillers)
+                                  AbiOlengKiller.sendAudioWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                  AbiOlengKiller.sendVideoWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                        
                         elif cmd == ".me" or text.lower() == 'gue':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
