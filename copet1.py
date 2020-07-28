@@ -100,6 +100,7 @@ wait = {
     "bots":{},
     "addbots":False,
     "dellbots":False,
+    "smule":True,
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -199,6 +200,33 @@ def mentionMembers(to, mid):
         cl.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     except Exception as error:
         print(error)
+        
+def RemotOlengKiller(to, BotsOleng):
+    try:
+        AbiOleng = ""
+        MuhazirOlengKiller = "Total {} Janda \n1.".format(str(len(BotsOleng)))
+        Desah = []
+        TapokPipit = 1
+        JilatMpek = 2
+        for Sedot in BotsOleng:
+            MuhazirOleng = "@x\n"
+            Wikwik = str(len(MuhazirOlengKiller))
+            Ngentot = str(len(MuhazirOlengKiller) + len(MuhazirOleng) - 1)
+            AbiOleng = {'S':Wikwik, 'E':Ngentot, 'M':Sedot}
+            Desah.append(AbiOleng)
+            MuhazirOlengKiller += MuhazirOleng
+            if TapokPipit < len(BotsOleng):
+                TapokPipit += 1
+                MuhazirOlengKiller += "%i. " % (JilatMpek)
+                JilatMpek=(JilatMpek+1)
+            else:
+                try:
+                    TapokPipit = "\n[ {} ]".format(str(AbiOlengKiller.getGroup(to).name))
+                except:
+                    TapokPipit = "\n[ Success ]"
+        AbiOlengKiller.sendMessage(to, MuhazirOlengKiller, {'MENTION': str('{"MENTIONEES":' + json.dumps(Desah) + '}')}, 0)
+    except Exception as error:
+        logError(error)        
 
 def siderMembers(to, mid):
     try:
@@ -2067,17 +2095,20 @@ def bot(op):
                         contact = cl.getContact(op.param2)
                         data = {
                                 "type": "flex",
-                                "altText": "⁣𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
+                                "altText": "𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
                                 "contents":{
+  "type": "carousel",
+  "contents": [
+    {
       "type": "bubble",
-      "size": "nano",
+      "size": "micro",
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
             "type": "image",
-            "url": "https://obs.line-scdn.net/{}".format(cl.getContact(op.param2).pictureStatus),
+            "url": str(AbiOlengKiller.getProfileCoverURL(op.param2)),
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -2088,78 +2119,42 @@ def bot(op):
             "layout": "vertical",
             "contents": [
               {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "  {}".format(cl.getContact(op.param2).displayName),
-                    "size": "xxs",
-                    "color": "#00FFFF",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "☯️ Ngintip colok...  ",
-                    "color": "#F8F8FF",
-                    "size": "xxs",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "filler"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "contents": [
-                      {
-                        "type": "filler"
-                      },
-                      {
-                        "type": "text",
-                        "text": "⁣𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶",
-                        "color": "#F8F8FF",
-                        "flex": 0,
-                        "offsetTop": "0px"
-                      },
-                      {
-                        "type": "filler"
-                      }
-                    ],
-                    "spacing": "xs"
-                  },
-                  {
-                    "type": "filler"
-                  }
-                ],
-               # "borderWidth": "1px",
-                #"cornerRadius": "4px",
-            #    "spacing": "xs",
-             #   "borderColor": "#ffffff",
-              #  "margin": "xs",
-             #   "height": "40px"
+                "type": "text",
+                "text": "{}".format(AbiOlengKiller.getContact(op.param2).displayName),
+                "color": "#ffffff",
+                "size": "xs",
+                "margin": "xxl",
+                "style": "normal",
+                "decoration": "underline",
+                "offsetStart": "5px"
               }
             ],
             "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "backgroundColor": "#03303Acc",
-            "paddingAll": "0px",
-            "paddingTop": "2px"
+            "margin": "none",
+            "width": "220px",
+            "offsetTop": "215px",
+            "offsetStart": "33px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://obs.line-scdn.net/{}".format(AbiOlengKiller.getContact(op.param2).pictureStatus),
+                "aspectMode": "cover",
+                "position": "absolute",
+                "size": "full"
+              }
+            ],
+            "width": "154px",
+            "height": "150px",
+            "cornerRadius": "100px",
+            "position": "absolute",
+            "borderWidth": "3px",
+            "borderColor": "#ff0000",
+            "offsetBottom": "40px",
+            "offsetStart": "1px"
           },
           {
             "type": "box",
@@ -2167,25 +2162,43 @@ def bot(op):
             "contents": [
               {
                 "type": "text",
-                "text": "CCTV",
+                "text": "S C T V",
+                "size": "sm",
                 "color": "#ffffff",
-                "align": "center",
-                "size": "xs",
-                "offsetTop": "-3px"
+                "weight": "bold"
               }
             ],
             "position": "absolute",
-            "cornerRadius": "8px",
-            "offsetTop": "3px",
-            "backgroundColor": "#ff334b",
+            "offsetTop": "2px",
+            "offsetStart": "55px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://5.top4top.net/p_1440pn8030.jpg",
+                "aspectMode": "cover"
+              }
+            ],
+            "position": "absolute",
+            "width": "30px",
             "offsetStart": "5px",
-            "height": "15px",
-            "width": "38px"
+            "offsetBottom": "2px",
+            "borderColor": "#ff0000",
+            "borderWidth": "1px"
           }
         ],
-        "paddingAll": "0px"
+        "paddingAll": "0px",
+        "borderWidth": "2px",
+        "cornerRadius": "10px",
+        "position": "relative",
+        "borderColor": "#ff0000"
+      }
     }
- }
+  ]
+}
 }
                         cl.postTemplate(op.param1, data)
                 
@@ -3611,7 +3624,49 @@ def bot(op):
                                    sendTextTemplate(msg.to,"☯️ ʜᴀᴘᴜs ᴄʜᴀᴛ ᴅᴏɴᴇ")
                                except:
                                    pass
-
+                        
+                        elif "https://www.smule.com" in msg.text.lower():
+                            if wait["smule"] == True:
+                                PokehBeceng = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+                                KacongAbi = re.findall(PokehBeceng, text)
+                                AbiGenteng = []
+                                for Cok in KacongAbi:
+                                    if Cok not in AbiGenteng:
+                                        AbiGenteng.append(Cok)
+                                for PalakBenPokeh in AbiGenteng:
+                                    KoplakAbi = PalakBenPokeh
+                                    MuhazirAlwiOleng = "𓆩𝓂𝓊𝓈𝓎𝒶𝒻𝒾𝓇𝒸𝒾𝓃𝓉𝒶"
+                                    headers = {
+                                        "apiKey":MuhazirAlwiOleng,
+                                        }
+                                    AbiSangeCok = json.loads(requests.get("https://api.be-team.me/smule?url="+KoplakAbi,headers=headers).text)
+                                    AbiOlengKillers="╭──「 OLENG KILLER 」─────"
+                                    AbiOlengKillers+="\n├ Band : " +AbiSangeCok["result"]["artist"]
+                                    AbiOlengKillers+="\n├ Judul : " +AbiSangeCok["result"]["title"]
+                                    AbiOlengKillers+="\n├ ID Smule : " +AbiSangeCok["result"]["owner"]["handle"]
+                                    AbiOlengKillers+="\n├ Status :  " +AbiSangeCok["result"]["message"]
+                                    AbiOlengKillers+="\n╰──「 Wait Video Nya 」─────"
+                                    AbiOlengKiller.sendMessage(msg.to, AbiOlengKillers)
+                                    AbiOlengKiller.sendAudioWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                    AbiOlengKiller.sendVideoWithURL(msg.to, AbiSangeCok["result"]["download_link"])
+                                    
+                        elif cmd.startswith("aby: "):
+                             Croot = msg.text.split(":")
+                             Pepek = msg.text.replace(Croot[0] + ":"," ")
+                             Peler = AbiOlengKiller.getGroupIdsJoined()
+                             Pokeh = Peler[int(Pepek)-1]                                                            
+                             CokAnCok = AbiOlengKiller.getGroup(Pokeh)                                                            
+                             OlengKiller = [contact.mid for contact in CokAnCok.members]
+                             Celik = len(OlengKiller)//19
+                             for Manik in range(Celik+1):
+                              txt = u''
+                              s=0
+                              Bohay=[]
+                              for Jilat in CokAnCok.members[Manik*19 : (Manik+1)*19]:
+                               Bohay.append(Jilat.mid)
+                              RemotOlengKiller(Pokeh, Bohay)                            
+                              AbiOlengKiller.sendMessage(msg.to, "Abi, Tag Janda Done\ndi Group: \n " + str(CokAnCok.name))            
+                              
                         elif text.lower() == "all clear":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
